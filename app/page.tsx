@@ -2,21 +2,12 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight, Github, Linkedin, Mail, Calendar, Code, Cpu, Layers, Database, Facebook, LogIn } from 'lucide-react'
+import { Github, Linkedin, Mail, Facebook, LogIn } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import Contact from './contact/page'
 import { Depoimentos, Diferenciais, Hero, Portfolio, Services } from '@/components'
 
 export default function Home() {
-  // Referências para as seções
-  const aboutRef = useRef(null)
-  const portfolioRef = useRef(null)
-
-  // Verifica se os elementos estão visíveis
-  const isAboutInView = useInView(aboutRef, { once: true, margin: "-100px" })
-  const isPortfolioInView = useInView(portfolioRef, { once: true, margin: "-100px" })
-
   return (
     <main className="min-h-screen p-8 md:p-24 bg-gradient-to-b from-background to-muted/10">
       <Hero />
