@@ -1,10 +1,8 @@
-export * from './message-table.jsx'
 export * from './contact-form'
-export * from './_menuTooggle'
 export * from './depoimentos'
 export * from './diferencas'
-export * from './_dropMenu'
 export * from './services'
 export * from './galeria'
 export * from './header2'
 export * from './hero'
+
