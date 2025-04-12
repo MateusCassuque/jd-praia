@@ -1,0 +1,28 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  name      String   @map("name") // Garantindo que o campo name seja mapeado corretamente
+  email     String
+  content   String   @map("message") // Mapeando o campo 'content' para 'message' no banco
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  // Adicione isso para manter a compatibilidade
+  @@map("messages")
+}
+
+model Admin {
+  id       Int    @id @default(autoincrement())
+  username String @unique
+  password String
+  createdAt DateTime @default(now())
+}
