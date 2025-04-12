@@ -1,9 +1,10 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { Factory, Users, Award, Leaf, Clock } from "lucide-react";
+import { Factory, Users, Award, Leaf, Clock, Mail, Phone, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -28,7 +29,7 @@ export default function AboutPage() {
               Especializados em soluções premium de janelas, portas e sistemas de caixilharia em PVC, Alumínio e Madeira para projetos residenciais e comerciais.
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Fale Conosco
+              <Link href={'/contact'} className="flex flex-wrap gap-4">Fale Conosco<PhoneCall className="ml-2" size={18} /></Link>
             </Button>
           </motion.div>
 
@@ -41,7 +42,7 @@ export default function AboutPage() {
             className="lg:w-1/2 relative"
           >
             <Image
-              src="/joel.png" // Substitua por imagem real
+              src="/joel.png"
               alt="Fábrica JD Praia LDA"
               width={800}
               height={600}
@@ -74,7 +75,7 @@ export default function AboutPage() {
               Nossa <span className="text-primary">História</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Da fundação humilde à liderança no mercado de caixilharia em Portugal.
+              Da fundação humilde à liderança no mercado de caixilharia em Angola.
             </p>
           </motion.div>
 
@@ -84,13 +85,13 @@ export default function AboutPage() {
                 icon: <Factory className="text-primary" size={32} />,
                 year: "2010",
                 title: "Fundação",
-                description: "Início das operações em Praia, focada em soluções locais.",
+                description: "Início das operações em Luanda, focada em soluções locais.",
               },
               {
                 icon: <Users className="text-primary" size={32} />,
                 year: "2015",
                 title: "Expansão",
-                description: "Ampliação da equipe e catálogo para atender todo o Algarve.",
+                description: "Ampliação da equipe e catálogo para atender todo o sul do País.",
               },
               {
                 icon: <Award className="text-primary" size={32} />,
@@ -144,7 +145,8 @@ export default function AboutPage() {
                 title: "Pontualidade",
                 description: "Respeito absoluto aos prazos acordados.",
               },
-              // Adicione mais valores conforme necessário
+              // Adicionar mais valores conforme necessário
+
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -179,7 +181,7 @@ export default function AboutPage() {
             Entre em contacto para um orçamento personalizado sem compromisso.
           </p>
           <Button size="lg" variant="secondary">
-            Solicitar Orçamento
+            <Link href={'/contact'} className="flex flex-wrap gap-4">Solicitar Orçamento<Mail className="ml-2" size={18} /></Link>
           </Button>
         </div>
       </motion.section>
