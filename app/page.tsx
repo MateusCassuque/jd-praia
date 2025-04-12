@@ -1,11 +1,14 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { Github, Linkedin, Mail, Facebook, LogIn } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Depoimentos, Diferenciais, Hero, Portfolio, Services } from '@/components'
+import { Hero } from '@/components/hero'
+import { Services } from '@/components/services'
+import { Diferenciais } from '@/components/diferencas'
+import { Portfolio } from '@/components/galeria'
+import { Depoimentos } from '@/components/depoimentos'
 
 export default function Home() {
   return (
