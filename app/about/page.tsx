@@ -41,7 +41,7 @@ export default function AboutPage() {
             className="lg:w-1/2 relative"
           >
             <Image
-              src="/sobre-nos-fabrica.jpg" // Substitua por imagem real
+              src="/joel.png" // Substitua por imagem real
               alt="Fábrica JD Praia LDA"
               width={800}
               height={600}
