@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Playfair_Display } from 'next/font/google';
-import Header from "@/components/header-menu";
 import { ThemeProvider } from "next-themes";
 import MySessionProvider from "@/provider/session";
 import { Toaster } from "sonner";
+import { Header } from "@/components/header2";
 
 
 const inter = Inter({
@@ -63,7 +63,7 @@ export default function RootLayout({
         >
           <MySessionProvider>
 
-            {/* <Header /> */}
+            <Header />
             {children}
             <Toaster richColors position="top-center" /> {/* Configuração do Toaster */}
           </MySessionProvider>

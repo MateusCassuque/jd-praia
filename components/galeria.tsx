@@ -2,9 +2,26 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
-  { id: 1, img: "/images/janelas.png", title: "Janelas em PVC - Residencial" },
-  { id: 2, img: "/images/capacete.jpg", title: "Portas de Alumínio - Comercial" },
-  // ... mais projetos
+  { 
+    id: 1, 
+    img: "/images/janelas.jpeg", 
+    title: "Janelas em PVC - Residencial" 
+
+  },
+
+  { 
+    id: 2, 
+    img: "/images/porta.jpeg", 
+    title: "Portas de Alumínio - Comercial" 
+
+  },
+
+  { 
+    id: 3, 
+    img: "/images/contentorVerde.jpeg", 
+    title: "Container personalizado - Bar" 
+
+  },
 ];
 
 export function Portfolio() {

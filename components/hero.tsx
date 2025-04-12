@@ -80,7 +80,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="shadow-lg">
-              <Phone className="mr-2" size={18} /> +244 123 456 789
+              <Link href={'tel:+244923798071'} className="flex items-center justify-center"><Phone size={16} className="mx-1" /> +244 923 798 071</Link>
             </Button>
           </motion.div>
         </motion.div>

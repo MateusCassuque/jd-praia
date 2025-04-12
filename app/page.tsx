@@ -2,15 +2,11 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { TypeAnimation } from 'react-type-animation'
 import { ArrowRight, Github, Linkedin, Mail, Calendar, Code, Cpu, Layers, Database, Facebook, LogIn } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Hero } from '@/components/hero'
-import { Services } from '@/components/services'
-import { ContactForm } from '@/components/form-contact-resent'
-import { Diferenciais } from '@/components/diferencas'
-import { Portfolio } from '@/components/galeria'
+import Contact from './contact/page'
+import { Depoimentos, Diferenciais, Hero, Portfolio, Services } from '@/components'
 
 export default function Home() {
   // Referências para as seções
@@ -28,7 +24,10 @@ export default function Home() {
       <Services />
       <Diferenciais />
 
-<Portfolio/>
+      <Portfolio />
+
+      <Depoimentos />
+
       {/* Rodapé com senso de urgência */}
       <motion.footer
         initial={{ opacity: 0 }}
@@ -38,7 +37,7 @@ export default function Home() {
       >
         <div className="text-center md:text-left">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Mateus Francisco Licronha Cassuque. Todos os direitos reservados.
+            © {new Date().getFullYear()} Dev-Cute. Todos os direitos reservados.
           </p>
           <p className="text-xs text-muted-foreground/60 mt-1">
             Vagas limitadas para novos projetos este mês. Entre em contato hoje mesmo.

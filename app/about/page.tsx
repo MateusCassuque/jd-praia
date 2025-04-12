@@ -1,202 +1,190 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { Code, Cpu, Database, Layers, Rocket, Briefcase, Award, Calendar } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { useRef } from 'react'
+import { motion } from "framer-motion";
+import { Factory, Users, Award, Leaf, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function AboutPage() {
-  const titleRef = useRef(null)
-  const LeftRef = useRef(null)
-  const RightRef = useRef(null)
-
-  // Verifica se os elementos estão visíveis
-  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" })
-  const isLeftInView = useInView(LeftRef, { once: true, margin: "-100px" })
-  const isRightInView = useInView(RightRef, { once: true, margin: "-100px" })
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/10">
-      <div className="container max-w-6xl mx-auto px-4">
-        {/* Cabeçalho com animação */}
-        <motion.div
-          ref={titleRef}
-          animate={isTitleInView ? { opacity: 1, y: 0 } : {}}
-          initial={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Sobre <span className="text-primary">Mim</span>
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Minha jornada, habilidades e abordagem para criar soluções digitais excepcionais.
-          </p>
-        </motion.div>
+    <div className="bg-white">
+      {/* Header (reutilize o componente Header que já criamos) */}
 
-        {/* Conteúdo principal */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Seção de texto e experiência */}
+      {/* Hero Section Sobre Nós */}
+      <section className="relative pt-32 pb-20">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+          {/* Texto */}
           <motion.div
-            ref={LeftRef}
-            animate={isLeftInView ? { opacity: 1, x: 0 } : {}}
-            initial={{ opacity: 0, x: -20 }}
-            transition={{ delay: 0.3 }}
-            className="space-y-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:w-1/2"
           >
-            {/* Introdução */}
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold flex items-center gap-2">
-                <Briefcase className="h-5 w-5 text-primary" />
-                Minha Trajetória
-              </h2>
-              <p className="text-muted-foreground">
-                Como desenvolvedor Full Stack com mais de X anos de experiência, tenho ajudado empresas a transformar suas ideias em produtos digitais robustos e escaláveis.
-              </p>
-            </div>
-
-            {/* Experiência */}
-            <div className="space-y-4">
-              <h2 className="text-2xl font-semibold flex items-center gap-2">
-                <Award className="h-5 w-5 text-primary" />
-                Experiência Profissional
-              </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    title: "Desenvolvedor Full Stack",
-                    company: "GOTA D' SOL, (SU) LDA.",
-                    period: "2025 - Presente",
-                    description: "Desenvolvimento de aplicações web completas com Next.js, Node.js e bancos de dados relacionais."
-                  },
-                  {
-                    title: "Especialista em Front-end",
-                    company: "DEV-CUTE",
-                    period: "2021 - 2024",
-                    description: "Criação de interfaces de usuário performáticas e acessíveis com React e TypeScript."
-                  }
-                ].map((item, index) => (
-                  <motion.div
-                    animate={{ opacity: 1, y: 0 }}
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                    className="border-l-2 border-primary pl-4 py-2"
-                  >
-                    <h3 className="font-medium">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.company} • {item.period}</p>
-                    <p className="text-muted-foreground mt-1 text-sm">{item.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Abordagem */}
-            <div className="space-y-4 pt-4">
-              <h2 className="text-2xl font-semibold flex items-center gap-2">
-                <Rocket className="h-5 w-5 text-primary" />
-                Minha Abordagem
-              </h2>
-              <p className="text-muted-foreground">
-                Acredito em soluções que combinam design intuitivo com arquitetura sólida, sempre focando nas necessidades reais do usuário final.
-              </p>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <span className="text-primary">JD Praia LDA</span> - Excelência em Caixilharia desde 2010
+            </h1>
+            <p className="text-lg text-gray-600 mb-8">
+              Especializados em soluções premium de janelas, portas e sistemas de caixilharia em PVC, Alumínio e Madeira para projetos residenciais e comerciais.
+            </p>
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Fale Conosco
+            </Button>
           </motion.div>
 
-          {/* Seção técnica com animação */}
+          {/* Imagem */}
           <motion.div
-            ref={RightRef}
-            initial={{ opacity: 0, x: 20 }}
-            animate={isRightInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.6 }}
-            className="bg-card p-8 rounded-xl border border-border/50 shadow-sm"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:w-1/2 relative"
           >
-            <h2 className="text-2xl font-semibold mb-6">Stack Técnica</h2>
-
-            {/* Habilidades principais */}
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-medium mb-3 flex items-center gap-2">
-                  <Code className="h-4 w-4 text-primary" />
-                  Linguagens & Frameworks
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {['TypeScript', 'Next.js', 'Node.js', 'React', 'Express', 'Adonis.Js'].map((tech, index) => (
-                    <motion.div
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.7 + index * 0.1 }}
-                    >
-                      <div className="px-4 py-2 bg-muted/50 rounded-md text-sm">
-                        {tech}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-medium mb-3 flex items-center gap-2">
-                  <Database className="h-4 w-4 text-primary" />
-                  Bancos de Dados
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {['PostgreSQL', 'MongoDB', 'Firebase'].map((tech, index) => (
-                    <motion.div
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.8 + index * 0.1 }}
-                    >
-                      <div className="px-4 py-2 bg-muted/50 rounded-md text-sm">
-                        {tech}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-medium mb-3 flex items-center gap-2">
-                  <Layers className="h-4 w-4 text-primary" />
-                  Ferramentas & Plataformas
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {['Docker', 'AWS', 'Git', 'Vercel'].map((tech, index) => (
-                    <motion.div
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.9 + index * 0.1 }}
-                    >
-                      <div className="px-4 py-2 bg-muted/50 rounded-md text-sm">
-                        {tech}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
+            <Image
+              src="/sobre-nos-fabrica.jpg" // Substitua por imagem real
+              alt="Fábrica JD Praia LDA"
+              width={800}
+              height={600}
+              className="rounded-xl shadow-2xl border-4 border-white"
+            />
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="mt-8 pt-6 border-t border-border/20"
-            >
-              <Button asChild size="lg" className="w-full gap-2">
-                <Link href="/schedule">
-                  <Calendar className="h-4 w-4" />
-                  Agendar Consulta
-                </Link>
-              </Button>
-            </motion.div>
+              animate={{ y: [-10, 10, -10] }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -z-10 inset-0 bg-primary/10 rounded-xl blur-md"
+            />
           </motion.div>
         </div>
-      </div>
+      </section>
+
+      {/* Nossa História */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nossa <span className="text-primary">História</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Da fundação humilde à liderança no mercado de caixilharia em Portugal.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Factory className="text-primary" size={32} />,
+                year: "2010",
+                title: "Fundação",
+                description: "Início das operações em Praia, focada em soluções locais.",
+              },
+              {
+                icon: <Users className="text-primary" size={32} />,
+                year: "2015",
+                title: "Expansão",
+                description: "Ampliação da equipe e catálogo para atender todo o Algarve.",
+              },
+              {
+                icon: <Award className="text-primary" size={32} />,
+                year: "2023",
+                title: "Reconhecimento",
+                description: "Premiada como Melhor Fornecedor de Caixilharia do Sul.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
+              >
+                <div className="mb-4">{item.icon}</div>
+                <span className="block text-primary font-bold text-lg mb-2">{item.year}</span>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Valores */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nossos <span className="text-primary">Valores</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: <Leaf className="text-primary" size={28} />,
+                title: "Sustentabilidade",
+                description: "Materiais eco-friendly e processos eficientes.",
+              },
+              {
+                icon: <Clock className="text-primary" size={28} />,
+                title: "Pontualidade",
+                description: "Respeito absoluto aos prazos acordados.",
+              },
+              // Adicione mais valores conforme necessário
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-primary/10 rounded-full">{item.icon}</div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                </div>
+                <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-16 bg-primary text-white text-center"
+      >
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Pronto para Transformar seu Projeto?</h2>
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
+            Entre em contacto para um orçamento personalizado sem compromisso.
+          </p>
+          <Button size="lg" variant="secondary">
+            Solicitar Orçamento
+          </Button>
+        </div>
+      </motion.section>
+
+      {/* Footer (reutilize o componente Footer) */}
     </div>
-  )
+  );
 }
