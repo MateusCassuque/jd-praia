@@ -12,7 +12,7 @@ import { Depoimentos } from '@/components/depoimentos'
 
 export default function Home() {
   return (
-    <main className="min-h-screen p-8 md:p-24 bg-gradient-to-b from-background to-muted/10">
+    <main className="">
       <Hero />
 
       <Services />

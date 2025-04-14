@@ -6,8 +6,8 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      <div className=" mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mt-24 sm:mt-32 lg:mt-0.5">
         {/* Texto + CTA (Lado Esquerdo) */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
