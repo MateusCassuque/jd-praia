@@ -26,7 +26,7 @@ const services = [
 
 export function Services() {
   return (
-    <section className="py-20 bg-white" id="projetos">
+    <section className="py-20 mx-1" id="projetos">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12 text-primary">
           Nossos <strong className="">Serviços</strong>
@@ -44,7 +44,7 @@ export function Services() {
             >
               <div className="mb-4 text-primary">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <p className="text-muted-foreground">{service.description}</p>
             </motion.div>
           ))}
         </div>

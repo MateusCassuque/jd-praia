@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className=" mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mt-24 sm:mt-32 lg:mt-0.5">
         {/* Texto + CTA (Lado Esquerdo) */}
         <motion.div
@@ -33,7 +33,7 @@ export function Hero() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           >
             <span className="text-primary">Soluções Premium</span> para Sua Casa
           </motion.h1>
@@ -43,7 +43,7 @@ export function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0"
+            className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0"
           >
             Fabricação personalizada em <strong>PVC</strong>, <strong>Alumínio</strong> e <strong>Madeira</strong> com eficiência energética.
           </motion.p>
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="space-y-2 mb-8 text-gray-700"
+            className="space-y-2 mb-8 text-muted-foreground"
           >
             {[
               "Garantia de 10 anos",

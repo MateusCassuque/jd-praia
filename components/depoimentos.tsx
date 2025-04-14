@@ -33,7 +33,7 @@ export function Depoimentos() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
         <motion.div
@@ -43,10 +43,10 @@ export function Depoimentos() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             O Que Dizem <span className="text-primary">Nossos Clientes</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Confira a opinião de quem já confiou em nossos produtos e serviços.
           </p>
         </motion.div>
@@ -71,15 +71,15 @@ export function Depoimentos() {
                       alt="Thumbnail do depoimento em vídeo"
                       className="w-full h-48 object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                      <Play className="text-white w-12 h-12 fill-white/80 group-hover:fill-primary transition-colors" />
+                    <div className="absolute inset-0 bg-black/15 flex items-center justify-center">
+                      <Play className="group-hover:fill-primary transition-colors" />
                     </div>
                   </div>
 
                   {/* Embed do YouTube (modal ou iframe) */}
                   <div className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-2">{testimonial.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{testimonial.comment}</p>
+                    <h3 className="font-semibold mb-2">{testimonial.name}</h3>
+                    <p className="text-muted-foreground text-sm mb-4">{testimonial.comment}</p>
 
                     {/* Iframe do YouTube (oculto inicialmente, aparece em modal ou expandido) */}
                     <div className="mt-4 aspect-w-16 aspect-h-9">
@@ -112,8 +112,8 @@ export function Depoimentos() {
                       <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <h4 className="font-semibold">{testimonial.name}</h4>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
                 </Card>
@@ -130,7 +130,7 @@ export function Depoimentos() {
           className="text-center mt-12"
         >
           <Button size="lg" className="bg-primary hover:bg-primary/90">
-            <Link href={'/contact'} className="flex flex-wrap gap-4">Solicite um Orçamento Sem Compromisso <ArrowRight className="ml-2" size={18} /></Link>
+            <Link href={'/contact'} className="flex">Solicite Orçamento Sem Compromisso <ArrowRight className="ml-1" size={18} /></Link>
           </Button>
         </motion.div>
       </div>

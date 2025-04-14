@@ -41,7 +41,7 @@ export function Diferenciais() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
         <motion.div
@@ -51,10 +51,10 @@ export function Diferenciais() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Porque Escolher a <span className="text-primary">JD Praia LDA</span>?
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Excelência em caixilharia desde 2010, combinando inovação, qualidade e atendimento personalizado.
           </p>
         </motion.div>
@@ -71,10 +71,10 @@ export function Diferenciais() {
             >
               <Card className="p-6 h-full hover:shadow-lg transition-shadow border-gray-200">
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                <h3 className="text-xl font-semibold mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </Card>
             </motion.div>
           ))}
@@ -88,7 +88,7 @@ export function Diferenciais() {
           className="text-center mt-12"
         >
           <Button size="lg" className="bg-primary hover:bg-primary/90">
-            <Link href={'/contact'} className="flex flex-wrap gap-4">Solicite um Orçamento Sem Compromisso <ArrowRight className="ml-2" size={18} /></Link>
+            <Link href={'/contact'} className="flex">Solicite Orçamento Sem Compromisso <ArrowRight className="m-1" size={18} /></Link>
           </Button>
         </motion.div>
       </div>
